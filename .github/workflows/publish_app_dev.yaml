@@ -15,10 +15,8 @@ jobs:
       contents: write
 
     steps:
-      # 签出代码
+      # 签出代码（使用触发 workflow 的提交/tag，而不是固定 dev 分支）
       - uses: actions/checkout@v4
-        with:
-          ref: dev
 
       # APK签名设置
       # - name: Download Android keystore
@@ -127,10 +125,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      # 签出代码
+      # 签出代码（使用触发 workflow 的提交/tag，而不是固定 dev 分支）
       - uses: actions/checkout@v4
-        with:
-          ref: dev
       # 设置Flutter环境
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -176,10 +172,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      # 签出代码
+      # 签出代码（使用触发 workflow 的提交/tag，而不是固定 dev 分支）
       - uses: actions/checkout@v4
-        with:
-          ref: dev
       # 设置Flutter环境
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
